@@ -8,7 +8,7 @@ export class UserRole extends BaseEntity{
 
     @Column({
         nullable: false,
-         unique: true
+        unique: true
     })
     role: string;
 

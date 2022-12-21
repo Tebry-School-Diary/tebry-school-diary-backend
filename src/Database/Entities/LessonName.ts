@@ -2,6 +2,7 @@ import {BaseEntity, Column, Entity, OneToMany, PrimaryGeneratedColumn} from "typ
 import {Lesson} from "./Lesson";
 import {Homework} from "./Homework";
 import {Event} from "./Event";
+import {Grade} from "./Grade";
 
 @Entity("lessonNames")
 export class LessonName extends BaseEntity{
@@ -22,4 +23,7 @@ export class LessonName extends BaseEntity{
 
     @OneToMany(() => Event, e => e.lessonName)
     events: Event[];
+
+    @OneToMany(() => Grade, g => g.lessonName)
+    grades: Grade[];
 }

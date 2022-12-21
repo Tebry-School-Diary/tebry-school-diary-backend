@@ -3,6 +3,7 @@ import {Profession} from "./Profession";
 import {User} from "./User";
 import {Homework} from "./Homework";
 import {ClassName} from "./ClassName";
+import {Event} from "./Event";
 
 @Entity("classes")
 export class Class extends BaseEntity{
@@ -28,4 +29,7 @@ export class Class extends BaseEntity{
 
     @OneToMany(() => Homework, h => h.class)
     homeworks: Homework[];
+
+    @OneToMany(() => Event, e => e.class)
+    events: Event[];
 }

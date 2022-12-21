@@ -7,7 +7,8 @@ export class GradeColor extends BaseEntity{
     id: number;
 
     @Column({
-        nullable: false
+        nullable: false,
+        unique: true
     })
     color: string;
 

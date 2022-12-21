@@ -1,8 +1,8 @@
 import {BaseEntity, Column, Entity, ManyToOne, PrimaryGeneratedColumn} from "typeorm";
 import {GradeType} from "./GradeType";
 import {GradeColor} from "./GradeColor";
-import {Lesson} from "./Lesson";
 import {User} from "./User";
+import {LessonName} from "./LessonName";
 
 @Entity("grades")
 export class Grade extends BaseEntity{
@@ -44,8 +44,8 @@ export class Grade extends BaseEntity{
     @ManyToOne(() => GradeColor, g => g.grades, {nullable: false})
     gradeColor: GradeColor;
 
-    @ManyToOne(() => Lesson, l => l.grades, {nullable: false})
-    lesson: Lesson;
+    @ManyToOne(() => LessonName, l => l.grades, {nullable: false})
+    lessonName: LessonName;
 
     @ManyToOne(() => User, u => u.grades, {nullable: false})
     whoAdd: User;

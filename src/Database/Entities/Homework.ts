@@ -15,6 +15,11 @@ export class Homework extends BaseEntity{
     @Column({
         nullable: false
     })
+    whenAdd: string;
+
+    @Column({
+        nullable: false
+    })
     task: string;
 
     @ManyToOne(() => LessonName, l => l.homeworks, {nullable: false})

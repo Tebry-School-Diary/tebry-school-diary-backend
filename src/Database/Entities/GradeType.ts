@@ -7,7 +7,8 @@ export class GradeType extends BaseEntity{
     id: number;
 
     @Column({
-        nullable: false
+        nullable: false,
+        unique: true
     })
     type: string;
 

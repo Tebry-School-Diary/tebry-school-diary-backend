@@ -21,7 +21,7 @@ export class User extends BaseEntity{
     @Column({
         nullable: false
     })
-    secondNAme: string;
+    secondName: string;
 
     @Column({
         nullable: false
@@ -63,7 +63,7 @@ export class User extends BaseEntity{
     @OneToMany(() => Announcement, a => a.author)
     announcements: Announcement[];
 
-    @OneToMany(() => Class, c => c.teacher, {nullable: true})
+    @OneToMany(() => Class, c => c.teacher)
     classes: Class[];
 
     @OneToMany(() => Attendance, a => a.student)

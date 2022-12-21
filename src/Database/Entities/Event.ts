@@ -3,6 +3,7 @@ import {EventType} from "./EventType";
 import {LessonName} from "./LessonName";
 import {LessonTime} from "./LessonTime";
 import {User} from "./User";
+import {Class} from "./Class";
 
 @Entity("events")
 export class Event extends BaseEntity{
@@ -35,4 +36,7 @@ export class Event extends BaseEntity{
 
     @ManyToOne(() => User, u => u.events, {nullable: false})
     teacher: User;
+
+    @ManyToOne(() => Class, c => c.events, {nullable: false})
+    class: Class;
 }
