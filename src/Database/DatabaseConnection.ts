@@ -1,15 +1,11 @@
 import {DataSource} from "typeorm";
 import {
-    Announcement,
-    Attendance,
-    AttendanceType,
+    Announcement, Attendance, AttendanceType,
     Class, ClassName, Event, EventType,
-    Grade,
-    GradeColor,
-    GradeType, Homework,
+    Grade, GradeColor, GradeType, Hall,
+    HallName, HallType, Homework,
     Lesson, LessonName, LessonTime, Message,
-    Profession,
-    User, UserRole
+    Profession, User, UserRole
 } from "./Entities";
 require("dotenv").config()
 
@@ -24,6 +20,6 @@ export const databaseConnection = new DataSource({
                GradeColor, Attendance, AttendanceType,
                LessonTime, Announcement, User, UserRole,
                Message, LessonName, Homework, Event, EventType,
-               ClassName],
+               ClassName, Hall, HallType, HallName],
     synchronize: true,
 })
