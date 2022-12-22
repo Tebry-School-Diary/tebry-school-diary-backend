@@ -3,6 +3,8 @@ import {LessonTime} from "./LessonTime";
 import {User} from "./User";
 import {LessonName} from "./LessonName";
 import {Hall} from "./Hall";
+import {Class} from "./Class";
+import {Department} from "./Department";
 
 @Entity("lessons")
 export class Lesson extends BaseEntity{
@@ -25,4 +27,10 @@ export class Lesson extends BaseEntity{
 
     @ManyToOne(() => Hall, h => h.lessons, {nullable: false})
     hall: Hall;
+
+    @ManyToOne(() => Class, c => c.lessons, {nullable: false})
+    class: Class;
+
+    @ManyToOne(() => Department, d => d.lessons, {nullable: false})
+    department: Department;
 }

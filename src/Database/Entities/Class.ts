@@ -4,6 +4,8 @@ import {User} from "./User";
 import {Homework} from "./Homework";
 import {ClassName} from "./ClassName";
 import {Event} from "./Event";
+import {Department} from "./Department";
+import {Lesson} from "./Lesson";
 
 @Entity("classes")
 export class Class extends BaseEntity{
@@ -24,6 +26,9 @@ export class Class extends BaseEntity{
     @ManyToOne(() => User, u => u.classes, {nullable: true})
     teacher: User;
 
+    @ManyToOne(() => Department, d => d.classes, {nullable: false})
+    department: Department;
+
     @OneToMany(() => User, u => u.class)
     students: User[];
 
@@ -32,4 +37,7 @@ export class Class extends BaseEntity{
 
     @OneToMany(() => Event, e => e.class)
     events: Event[];
+
+    @OneToMany(() => Lesson, l => l.class)
+    lessons: Lesson[];
 }

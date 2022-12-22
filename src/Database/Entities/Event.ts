@@ -4,6 +4,7 @@ import {LessonName} from "./LessonName";
 import {LessonTime} from "./LessonTime";
 import {User} from "./User";
 import {Class} from "./Class";
+import {Department} from "./Department";
 
 @Entity("events")
 export class Event extends BaseEntity{

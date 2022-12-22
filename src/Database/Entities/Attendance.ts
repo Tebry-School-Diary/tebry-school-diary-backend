@@ -2,6 +2,7 @@ import {BaseEntity, Column, Entity, ManyToOne, PrimaryGeneratedColumn} from "typ
 import {AttendanceType} from "./AttendanceType";
 import {LessonTime} from "./LessonTime";
 import {User} from "./User";
+import {Department} from "./Department";
 
 @Entity("attendances")
 export class Attendance extends BaseEntity{

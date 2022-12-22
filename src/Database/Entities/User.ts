@@ -7,6 +7,7 @@ import {Attendance} from "./Attendance";
 import {Lesson} from "./Lesson";
 import {Message} from "./Message";
 import {Event} from "./Event";
+import {Department} from "./Department";
 
 @Entity("users")
 export class User extends BaseEntity{
@@ -30,9 +31,10 @@ export class User extends BaseEntity{
 
     @Column({
         nullable: false,
-        unique: true
+        unique: true,
+        type: "bigint"
     })
-    pesel: string;
+    pesel: number;
 
     @Column({
         nullable: false,
@@ -56,6 +58,9 @@ export class User extends BaseEntity{
 
     @ManyToOne(() => Class, c => c.students, {nullable: false})
     class: Class;
+
+    @ManyToOne(() => Department, d => d.users)
+    department: Department;
 
     @OneToMany(() => Grade, g => g.student)
     grades: Grade[];
