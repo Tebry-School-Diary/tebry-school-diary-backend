@@ -1,7 +1,7 @@
 import {DataSource} from "typeorm";
 import {
-    Announcement, Attendance, AttendanceType,
-    Class, ClassName, Event, EventType,
+    Announcement, Attendance, AttendanceType, City,
+    Class, ClassName, Department, DepartmentName, Event, EventType,
     Grade, GradeColor, GradeType, Hall,
     HallName, HallType, Homework,
     Lesson, LessonName, LessonTime, Message,
@@ -20,6 +20,7 @@ export const databaseConnection = new DataSource({
                GradeColor, Attendance, AttendanceType,
                LessonTime, Announcement, User, UserRole,
                Message, LessonName, Homework, Event, EventType,
-               ClassName, Hall, HallType, HallName],
-    synchronize: true,
+               ClassName, Hall, HallType, HallName, City,
+               Department, DepartmentName],
+    synchronize: true
 })

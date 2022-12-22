@@ -23,6 +23,6 @@ export class Lesson extends BaseEntity{
     @ManyToOne(() => User, u => u.lessons, {nullable: false})
     teacher: User;
 
-    @ManyToOne(() => Hall, h => h.lessons)
+    @ManyToOne(() => Hall, h => h.lessons, {nullable: false})
     hall: Hall;
 }
