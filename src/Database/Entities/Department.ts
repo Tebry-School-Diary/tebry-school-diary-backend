@@ -1,4 +1,4 @@
-import {BaseEntity, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn} from "typeorm";
+import {BaseEntity, Entity, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn} from "typeorm";
 import {City} from "./City";
 import {DepartmentName} from "./DepartmentName";
 import {User} from "./User";
@@ -6,6 +6,7 @@ import {Announcement} from "./Announcement";
 import {Class} from "./Class";
 import {Hall} from "./Hall";
 import {Lesson} from "./Lesson";
+import {Building} from "./Building";
 
 @Entity("departments")
 export class Department extends BaseEntity{
@@ -17,6 +18,9 @@ export class Department extends BaseEntity{
 
     @ManyToOne(() => DepartmentName, d => d.departments, {nullable: false})
     departmentName: DepartmentName;
+
+    @ManyToMany(() => Building, b => b.departments)
+    buildings: Building[];
 
     @OneToMany(() => User, u => u.department)
     users: User[];
