@@ -1,4 +1,5 @@
 import {databaseConnection} from "./DatabaseConnection";
-import {User} from "./Entities";
+import {City, User} from "./Entities";
 
 export const UserRepo = databaseConnection.getRepository<User>(User)
+export const CityRepo = databaseConnection.getRepository<City>(City)
