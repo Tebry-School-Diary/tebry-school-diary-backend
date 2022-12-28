@@ -1,7 +1,7 @@
 import {Injectable} from "@nestjs/common";
 import {DepartmentResponse} from "./Response/DepartmentResponse";
 import {DepartmentRepo} from "../Database/DatabaseRepositories";
-import {DepartmentName} from "./Response/DepartmentName";
+import {DepartmentNameResponse} from "../DepartmentNames/Response/DepartmentNameResponse";
 import {CityResponse} from "../Cities/Response/CityResponse";
 import {AddDepartmentDTO} from "./DTO/AddDepartmentDTO";
 import {RemoveDepartmentDTO} from "./DTO/RemoveDepartmentDTO";
@@ -19,7 +19,7 @@ export class DepartmentsService{
                 }
             });
 
-            departments.forEach(d => arr.push(new DepartmentResponse(d.id, new DepartmentName(d.departmentName.id, d.departmentName.name),
+            departments.forEach(d => arr.push(new DepartmentResponse(d.id, new DepartmentNameResponse(d.departmentName.id, d.departmentName.name),
                 new CityResponse(d.city.id, d.city.city), d.address)));
 
             return arr;

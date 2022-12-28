@@ -1,6 +1,8 @@
 import {databaseConnection} from "./DatabaseConnection";
-import {City, Department, User} from "./Entities";
+import {City, Department, DepartmentName, User} from "./Entities";
 
 export const UserRepo = databaseConnection.getRepository<User>(User);
 export const CityRepo = databaseConnection.getRepository<City>(City);
 export const DepartmentRepo = databaseConnection.getRepository<Department>(Department);
+
+export const DepartmentNamesRepo = databaseConnection.getRepository<DepartmentName>(DepartmentName)

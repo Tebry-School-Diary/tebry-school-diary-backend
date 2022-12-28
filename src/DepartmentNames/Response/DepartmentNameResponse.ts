@@ -1,4 +1,4 @@
-export class DepartmentName{
+export class DepartmentNameResponse {
     public readonly departmentNameId: number;
     public readonly name: string;
 
