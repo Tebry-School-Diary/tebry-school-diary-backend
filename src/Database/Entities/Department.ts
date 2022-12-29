@@ -36,9 +36,6 @@ export class Department extends BaseEntity{
     @OneToMany(() => Class, c => c.department)
     classes: Class[];
 
-    @OneToMany(() => Hall, h => h.department)
-    halls: Hall[];
-
     @OneToMany(() => Lesson, l => l.department)
     lessons: Lesson[];
 }
