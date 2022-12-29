@@ -8,12 +8,17 @@ export class Building extends BaseEntity{
     id: number;
 
     @Column({
+        nullable: false
+    })
+    prefix: string;
+
+    @Column({
         nullable: false,
         unique: true
     })
     buildingAddress: string;
 
-    @ManyToMany(() => Department, d => d.buildings)
+    @ManyToMany(() => Department, d => d.buildings, {nullable: false})
     @JoinTable({name: "building_department"})
     departments: Department[];
 
