@@ -1,5 +1,4 @@
 import {BaseEntity, Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn} from "typeorm";
-import {HallName} from "./HallName";
 import {HallType} from "./HallType";
 import {Lesson} from "./Lesson";
 import {Building} from "./Building";
@@ -14,8 +13,10 @@ export class Hall extends BaseEntity{
     })
     seatsAmount: number;
 
-    @ManyToOne(() => HallName,  h => h.halls, {nullable: false})
-    hallName: HallName;
+    @Column({
+        nullable: false
+    })
+    hallNumber: number;
 
     @ManyToOne(() => HallType,  h => h.halls, {nullable: false})
     hallType: HallType;
