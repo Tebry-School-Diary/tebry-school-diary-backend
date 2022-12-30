@@ -2,7 +2,6 @@ import {BaseEntity, Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn
 import {Profession} from "./Profession";
 import {User} from "./User";
 import {Homework} from "./Homework";
-import {ClassName} from "./ClassName";
 import {Event} from "./Event";
 import {Department} from "./Department";
 import {Lesson} from "./Lesson";
@@ -17,8 +16,10 @@ export class Class extends BaseEntity{
     })
     studentsAmount: number;
 
-    @ManyToOne(() => ClassName, c => c.class, {nullable: false})
-    className: ClassName;
+    @Column({
+        nullable: false
+    })
+    className: string;
 
     @ManyToOne(() => Profession, p => p.profession, {nullable: false})
     profession: Profession;
