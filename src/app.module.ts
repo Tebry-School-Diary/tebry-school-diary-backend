@@ -6,8 +6,10 @@ import {BuildingsModule} from "./Buildings/buildings.module";
 import {HallTypesModule} from "./HallTypes/hallTypes.module";
 import {HallsModule} from "./Halls/halls.module";
 import {ProfessionsModule} from "./Professions/professions.module";
+import {UserRolesModule} from "./UserRoles/userRoles.module";
 
 @Module({
-  imports: [CitiesModule, DepartmentsModule, DepartmentNamesModule, BuildingsModule, HallTypesModule, HallsModule, ProfessionsModule]
+  imports: [CitiesModule, DepartmentsModule, DepartmentNamesModule, BuildingsModule, HallTypesModule, HallsModule, ProfessionsModule,
+    UserRolesModule]
 })
 export class AppModule { }

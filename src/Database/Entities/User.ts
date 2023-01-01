@@ -56,10 +56,10 @@ export class User extends BaseEntity{
     @ManyToOne(() => UserRole, r => r.users, {nullable: false})
     role: UserRole;
 
-    @ManyToOne(() => Class, c => c.students, {nullable: false})
+    @ManyToOne(() => Class, c => c.students, {nullable: true})
     class: Class;
 
-    @ManyToOne(() => Department, d => d.users)
+    @ManyToOne(() => Department, d => d.users, {nullable: false})
     department: Department;
 
     @OneToMany(() => Grade, g => g.student)
